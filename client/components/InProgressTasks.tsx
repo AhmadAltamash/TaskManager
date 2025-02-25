@@ -1,5 +1,4 @@
 'use client';
-import { useTaskContext } from "../context/TaskContext";
 import TaskItem from "./TaskItem";
 
 interface Task {

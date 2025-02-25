@@ -55,6 +55,7 @@ export default function TaskForm() {
             }, 2000);
         } catch (error) {
             toast.error('Failed to add task');
+            console.log(error)
         }
     };
 

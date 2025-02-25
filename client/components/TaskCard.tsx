@@ -34,7 +34,6 @@ const TaskCard = () => {
 
     // Count tasks based on their status
     const expiredCount = tasks.filter(task => task.status === 'Timeout').length;
-    const activeCount = tasks.filter(task => task.status === 'To Do' || task.status === 'In Progress').length;
     const completedCount = tasks.filter(task => task.status === 'Done').length;
 
     const taskMap = [
