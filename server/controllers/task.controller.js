@@ -24,7 +24,7 @@ export const createTask = async (req, res) => {
 
 export const getTaskById = async (req, res) => {
   try {
-    await Task.updateTimeoutTasks(); // Ensure timeout tasks are updated
+    await Task.updateTimeoutTasks();
     const task = await Task.findById(req.params.id);
     if (!task) return res.status(404).json({ message: "Task not found" });
 
@@ -39,10 +39,10 @@ export const updateTask = async (req, res) => {
     let task = await Task.findById(req.params.id);
     if (!task) return res.status(404).json({ message: "Task not found" });
 
-    // Update task fields
+
     Object.assign(task, req.body);
 
-    await task.save(); // Saving triggers the model's timeout check
+    await task.save();
     res.json(task);
   } catch (error) {
     res.status(500).json({ message: "Error updating task" });
