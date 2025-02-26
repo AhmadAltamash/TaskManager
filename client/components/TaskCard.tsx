@@ -58,10 +58,10 @@ const TaskCard = () => {
     ];
 
     return (
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-4 flex-1'>
             {taskMap.map((card, index) => (
-                <div key={index} className='bg-gray-300 w-60 h-40 p-4 flex flex-col gap-4 rounded-2xl'>
-                    <div className={`p-2 rounded-full ${card.bgColor} w-fit`}>{card.icon}</div>
+                <div key={index} className='bg-gray-300 sm:w-60 w-30 sm:h-40 h-30 p-4 flex flex-col sm:gap-4 gap-2 rounded-2xl'>
+                    <div className={`sm:p-2 p-1 rounded-full ${card.bgColor} w-fit`}>{card.icon}</div>
                     <h2 className='text-sm text-gray-500 font-semibold'>{card.title}</h2>
                     <p className='text-2xl'>{card.count}</p>
                 </div>

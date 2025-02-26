@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import { useTaskContext } from '../context/TaskContext';
-import { useRouter } from 'next/navigation'; // Import Next.js router
-import toast, { Toaster } from 'react-hot-toast'; // Import toast notifications
+import { useRouter } from 'next/navigation'; 
+import toast, { Toaster } from 'react-hot-toast'; 
 
 export default function TaskForm() {
     const { addTask } = useTaskContext();
-    const router = useRouter(); // Initialize router for redirection
+    const router = useRouter(); 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [assignedTo, setAssignedTo] = useState('');
@@ -22,7 +22,7 @@ export default function TaskForm() {
 
         try {
           addTask({
-            _id: crypto.randomUUID(), // ✅ Generate a unique ID
+            _id: crypto.randomUUID(), 
             title,
             description,
             assignedTo,
@@ -33,7 +33,7 @@ export default function TaskForm() {
         
 
             toast.success('Task added successfully! Redirecting You...', {
-              duration: 3000, // Visible for 3 seconds
+              duration: 3000, 
               style: {
                   background: '#4CAF50',
                   color: '#fff',
@@ -49,7 +49,7 @@ export default function TaskForm() {
             setAssignedTo('');
             setDeadline('');
 
-            // Redirect to home page after a short delay
+           
             setTimeout(() => {
                 router.push('/');
             }, 2000);
@@ -61,7 +61,7 @@ export default function TaskForm() {
 
     return (
         <>
-            <Toaster position="top-right" reverseOrder={false} /> {/* Toast container */}
+            <Toaster position="top-right" reverseOrder={false} /> 
             <form onSubmit={handleSubmit} className='p-4 flex flex-col justify-center items-center'>
                 <input
                     type='text'

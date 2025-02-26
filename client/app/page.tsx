@@ -15,7 +15,7 @@ const Home = () => {
   const [filter, setFilter] = useState<string | null>(null);
   const [showFilterMenu, setShowFilterMenu] = useState(false);
 
-  // ✅ Function to handle filtering
+
   const getFilteredTasks = () => {
     let filtered = [...tasks];
 
@@ -40,19 +40,19 @@ const Home = () => {
 
   return (
     <div className="h-screen w-full box-border p-0 m-0">
-      {/* 🔹 Search Bar & Filter Button */}
+
       <div className="mx-auto h-20 w-[90%] bg-gray-300 mt-5 flex justify-between items-center rounded-full relative">
         <div className="input flex ml-8 h-full items-center w-[60%] relative">
           <IoIosSearch className="absolute ml-2 cursor-pointer" size={"24"} />
           <input
-            className="h-[50%] w-[50%] shadow-lg outline-none focus:outline-blue-400 pl-10 rounded-3xl"
+            className="sm:h-[50%] sm:w-[50%] h-[50%] w-[85%] shadow-lg outline-none focus:outline-blue-400 pl-10 rounded-3xl"
             placeholder="Search Tasks"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
         <button
-          className="bg-gray-100 w-[7%] h-[50%] mr-8 rounded-md outline-none focus:outline-blue-400 flex gap-2 justify-center items-center text-gray-600 font-normal relative"
+          className="bg-gray-100 sm:w-[7%] sm:h-[50%] w-[25%] mr-8 rounded-md outline-none focus:outline-blue-400 flex gap-2 justify-center items-center text-gray-600 font-normal relative"
           onClick={() => setShowFilterMenu((prev) => !prev)}
         >
           <CiFilter />
@@ -60,7 +60,7 @@ const Home = () => {
           <MdOutlineKeyboardArrowDown />
         </button>
 
-        {/* 🔹 Filter Menu Popup */}
+
         {showFilterMenu && (
           <div className="absolute top-20 right-8 bg-white shadow-lg rounded-md w-40 border p-2 z-10">
             {["A-Z", "Z-A", "To Do", "In Progress", "Done"].map((option) => (
@@ -79,8 +79,8 @@ const Home = () => {
         )}
       </div>
 
-      {/* 🔹 Task Sections */}
-      <div className="flex gap-5 mx-auto w-[90%] mt-10">
+
+      <div className="flex sm:flex-row flex-col gap-5 mx-auto w-[90%] mt-10 items-center">
         <TaskCard />
         <ToDoTasks tasks={getFilteredTasks()} />
         <InProgressTasks tasks={getFilteredTasks()} />

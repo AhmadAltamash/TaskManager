@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-y-hidden`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased sm:overflow-y-hidden overflow-y-scroll`}>
         <TaskProvider>
           {children} {/* Now all pages & components have access to TaskContext */}
         </TaskProvider>

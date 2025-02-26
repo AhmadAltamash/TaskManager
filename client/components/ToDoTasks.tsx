@@ -18,7 +18,7 @@ export default function ToDoTasks({ tasks }: ToDoTasksProps) { // Typed props
   const toDoTasksLength = toDoTasks.length;
 
   return (
-    <div className="w-1/3 bg-gray-300 p-4 rounded-lg h-[565px] overflow-y-auto">
+    <div className="sm:w-1/3 w-full bg-gray-300 p-4 rounded-lg sm:h-[565px] h-fit overflow-y-auto">
       <div className="border-b-purple-800 flex items-center justify-center gap-2 border-b-2 mb-2">
         <span className="p-1 rounded-full bg-purple-800"></span>
         <h2 className="text-lg font-bold text-purple-800">To Do</h2>
