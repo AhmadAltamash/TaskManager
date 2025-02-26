@@ -30,7 +30,7 @@ const TaskCard = () => {
         };
 
         fetchTasks();
-    }, []);
+    }, [tasks]);
 
     // Count tasks based on their status
     const expiredCount = tasks.filter(task => task.status === 'Timeout').length;
